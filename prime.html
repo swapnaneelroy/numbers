@@ -43,13 +43,15 @@
             width: 300px;
             height: 200px;
             margin: auto; /* Center-align the textarea */
-            display: block; /* Ensure it's a block-level element */
+            display: none; /* Ensure it's a block-level element */
             /* Remove the default border */
             padding: 10px; /* Add padding for spacing */
             border-radius: 10px; /* Add border radius for style */
         }
-        
-        
+        #results-section
+        {
+            display: none;
+        }        
     </style>
 </head>
 <body>
@@ -78,7 +80,7 @@
                 </div>
             </form>
             <br> <br><hr style="border-color: black;">
-            <div>
+            <div id=results-section>
                 <h2 id="hh2">Results</h2>
             </div>
             <textarea id="ans"></textarea>
@@ -110,14 +112,12 @@
                 {
                     if (isPrime(i))
                     {
-                        document.getElementById("ans").innerHTML+=i+",";
+                        document.getElementById("ans").innerHTML+=i+" ";
                     }
                 }
+                document.getElementById("results-section").style.display = "block";
+                document.getElementById("ans").style.display = "block";
             }
-        </script>
-    
-    
-        
+        </script>        
 </body>
-
 </html>
